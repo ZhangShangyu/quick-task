@@ -20,24 +20,24 @@ public class ScriptExecuteEngine {
     private static final String SCRIPT_TYPE = ".groovy";
 
     public void run(String source) {
-        List<File> scripts = FileUtils.loadFiles(source, new Predicate<File>() {
-            @Override
-            public boolean test(File file) {
-                return !file.getName().endsWith(SCRIPT_TYPE);
-            }
-        });
+//        List<File> scripts = FileUtils.loadFiles(source, new Predicate<File>() {
+//            @Override
+//            public boolean test(File file) {
+//                return !file.getName().endsWith(SCRIPT_TYPE);
+//            }
+//        });
 
-        ITask task;
-        ScriptTaskDecorate scriptTask;
-        for (File f : scripts) {
-            task = ScriptLoadUtil.loadScript(f);
-            if (task == null) {
-                continue;
-            }
-
-            scriptTask = new ScriptTaskDecorate(task);
-            TaskContainer.registerTask(f.getAbsolutePath(), scriptTask);
-        }
+//        ITask task;
+//        ScriptTaskDecorate scriptTask;
+//        for (File f : scripts) {
+//            task = ScriptLoadUtil.loadScript(f);
+//            if (task == null) {
+//                continue;
+//            }
+//
+//            scriptTask = new ScriptTaskDecorate(task);
+//            TaskContainer.registerTask(f.getAbsolutePath(), scriptTask);
+//        }
 
         try {
             TaskChangeWatcher.registerWatcher(new File(source));

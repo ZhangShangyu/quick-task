@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 public class TaskChangeWatcher {
-    private static final String SCRIPT_TYPE = ".groovy";
+    private static final String SCRIPT_TYPE = ".java";
 
     public static boolean registerWatcher(File file) {
         try {
